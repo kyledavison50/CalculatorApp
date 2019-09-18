@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import androidx.gridlayout.widget.GridLayout;
 import android.widget.TextView;
@@ -15,7 +14,7 @@ import com.example.project1.presenter.CalculatorPresenter;
 
 public class MainActivity extends AppCompatActivity implements CalculatorView{
 
-    private ViewGroup operationsGrid;
+    private GridLayout operationsGrid;
     private TextView currentExpression;
     private TextView previousExpression;
     private Button clear;
@@ -27,7 +26,8 @@ public class MainActivity extends AppCompatActivity implements CalculatorView{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        operationsGrid = (ViewGroup) findViewById(R.id.operationsGrid);
+        operationsGrid = (GridLayout) findViewById(R.id.operationsGrid);
+        //operationsGrid.setOnClickListener(); // TODO: Set this to onGridButtonClick (trying to fix the delay)
         currentExpression = (TextView)findViewById(R.id.currentExpression);
         presenter.onCreate();
     }
