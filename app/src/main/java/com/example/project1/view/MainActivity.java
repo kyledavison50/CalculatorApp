@@ -6,6 +6,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.gridlayout.widget.GridLayout;
 
@@ -28,10 +29,16 @@ public class MainActivity extends AppCompatActivity implements CalculatorView{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         clear = (Button)findViewById(R.id.clear);
         backspace = (Button)findViewById(R.id.backspace);
         currentExpression = (TextView)findViewById(R.id.currentExpression);
         operationsGrid = (GridLayout) findViewById(R.id.operationsGrid);
+        previousExpression = (TextView) findViewById(R.id.previousExpression);
+
+        previousExpression.setText("");
 
         presenter.onCreate();
         onButtonClick(clear);
@@ -44,6 +51,12 @@ public class MainActivity extends AppCompatActivity implements CalculatorView{
         currentExpression.setText(expression);
     }
 
+    public void setPreviousExpression(String expression)
+    {
+        previousExpression.setText(expression);
+    }
+
+    // Regular button click listener for clear and backspace button
     public void onButtonClick(View view)
     {
         Button button = (Button)view;
@@ -53,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements CalculatorView{
             @Override
             public void onClick(View v) {
                 if(buttonText.equals(getString(R.string.backspace)))
-                    presenter.buttonHandler("backspace");
+                    presenter.buttonHandler("backspace"); // Since backspace character cant be represented as a string
                 else
                     presenter.buttonHandler(buttonText);
             }
@@ -61,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements CalculatorView{
 
     }
 
+    // On click listener for all buttons in gridLayout
     public void onGridButtonClick(View view)
     {
         for(int index = 0; index < ((GridLayout)view).getChildCount(); ++index)
@@ -87,6 +101,6 @@ public class MainActivity extends AppCompatActivity implements CalculatorView{
     public void clearCalculator()
     {
         currentExpression.setText("0");
-        //previousExpression.setText(R.string.empty);
+        previousExpression.setText(R.string.empty);
     }
 }

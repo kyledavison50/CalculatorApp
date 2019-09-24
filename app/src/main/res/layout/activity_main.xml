@@ -222,23 +222,22 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/backspace"
-        android:layout_width="77dp"
-        android:layout_height="55dp"
-        android:layout_marginEnd="3dp"
-        android:layout_marginRight="3dp"
-        android:layout_marginBottom="4dp"
-        android:background="@drawable/button_press"
-        android:text="@string/backspace"
-        android:textColor="@color/textColor"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/operationsGrid"
-        app:layout_constraintEnd_toEndOf="@+id/operationsGrid"
-        app:layout_constraintHorizontal_bias="0.99"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/currentExpression"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="RtlHardcoded" />
+            android:id="@+id/backspace"
+            android:layout_width="77dp"
+            android:layout_height="55dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/button_press"
+            android:text="@string/backspace"
+            android:textColor="@color/textColor"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/operationsGrid"
+            app:layout_constraintEnd_toEndOf="@+id/operationsGrid"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/currentExpression"
+            app:layout_constraintVertical_bias="1.00"
+            tools:ignore="RtlHardcoded" />
 
     <Button
             android:id="@+id/clear"
@@ -256,5 +255,21 @@
             app:layout_constraintStart_toStartOf="@+id/operationsGrid"
             app:layout_constraintTop_toBottomOf="@+id/currentExpression"
             app:layout_constraintVertical_bias="1.0"
-        tools:ignore="RtlHardcoded" />
+            tools:ignore="RtlHardcoded" />
+
+    <TextView
+            android:id="@+id/previousExpression"
+            android:layout_width="330dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="320dp"
+            android:text="@string/previousexpression"
+            android:textColor="@color/previousText"
+            android:textSize="30sp"
+            android:gravity="bottom|end"
+            app:layout_constraintBottom_toTopOf="@+id/operationsGrid"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

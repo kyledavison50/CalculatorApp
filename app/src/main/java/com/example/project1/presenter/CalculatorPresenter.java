@@ -64,6 +64,7 @@ public class CalculatorPresenter implements Presenter {
         // Solve the expression, leave result on the screen
         if(expressionComponent.equals("="))
         {
+            view.setPreviousExpression(expression);
             String result = model.Evaluate(expression);
 
             if(!result.equals("Error"))
@@ -134,11 +135,6 @@ public class CalculatorPresenter implements Presenter {
     public void updateCurrentExpression(String expression)
     {
         view.setCurrentExpression(expression);
-        //model.setCurrentExpression(expression);
     }
 
-    public void onClearSelected()
-    {
-        view.clearCalculator();
-    }
 }

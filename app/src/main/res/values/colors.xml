@@ -7,4 +7,5 @@
     <color name="background">#0D0208</color>
     <color name="buttonColor">#414141</color>
     <color name="buttonPressColor">#2C2B2B</color>
+    <color name="previousText">#999E9A</color>
 </resources>

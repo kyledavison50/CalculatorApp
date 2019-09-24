@@ -26,5 +26,6 @@
     <string name="buttonHeight">85</string>
     <string name="buttonFont">25sp</string>
     <string name="divide">/</string>
+    <string name="previousexpression">PreviousExpression</string>
 
 </resources>
